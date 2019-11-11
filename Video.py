@@ -74,7 +74,7 @@ while(cap.isOpened()):
 while(cap.isOpened()):
     ret, frame = cap.read()
     center = (w // 2, h // 2)
-    M = cv2.getRotationMatrix2D(center, -45, 1.0)
+    M = cv2.getRotationMatrix2D(center, -180, 1.0)
     rotacao = cv2.warpAffine(frame, M, (w, h))
 
     cv2.imshow('Rotacao',rotacao)
@@ -101,7 +101,7 @@ while(cap.isOpened()):
 while(cap.isOpened()):
     ret, frame = cap.read() #fazer tramento do ultimo while
 
-    rota = imutils.rotate_bound(frame, 45)
+    rota = imutils.rotate_bound(frame, 90)
 
     cv2.imshow('Rotacao Modificada',rota)
     if cv2.waitKey(20) & 0xFF == ord('q'):
@@ -114,7 +114,7 @@ while(cap.isOpened()):
 while(cap.isOpened()):
     ret, frame = cap.read() #fazer tramento do ultimo while
 
-    rota = imutils.rotate_bound(frame, 45)
+    rota = imutils.rotate_bound(frame, 60)
 
     cv2.imshow('Rotacao Modificada',rota)
     if cv2.waitKey(20) & 0xFF == ord('q'):
@@ -156,7 +156,7 @@ while(cap.isOpened()):
     ret, frame = cap.read()
 
     saida = frame.copy()
-    cv2.circle(saida, (150, 50), 40, (255, 10, 0), -1)
+    cv2.circle(saida, (150, 50), 40, (255, 10, 0), -9)
 
     cv2.imshow('Circulo sobre o Video',saida)
     if cv2.waitKey(20) & 0xFF == ord('q'):
@@ -170,12 +170,12 @@ while(cap.isOpened()):
     ret, frame = cap.read() #fazer tramento do ultimo while
 
     saida = frame.copy()
-    cv2.line(saida, (60, 20), (200, 200), (0, 0, 255), 5)
+    cv2.line(saida, (160, 20), (250, 200), (0, 0, 255), 5)
 
     cv2.imshow('Linha sobre o Video',saida)
     if cv2.waitKey(20) & 0xFF == ord('q'):
         break
-    if (i == 1100): #1822 frames
+    if (i == 1200): #1822 frames
         break
     #print (i)
     i +=1
@@ -184,13 +184,13 @@ while(cap.isOpened()):
     ret, frame = cap.read() #fazer tramento do ultimo while
 
     saida = frame.copy()
-    cv2.putText(saida, "OpenCV + Jerry!!!", (10, 20),
+    cv2.putText(saida, "OpenCV + Tom e Jerry!!!", (20, 20),
         cv2.FONT_HERSHEY_SIMPLEX, 0.7, (0, 255, 0), 2)
 
     cv2.imshow('Frase aplicada sobre o Video',saida)
     if cv2.waitKey(20) & 0xFF == ord('q'):
         break
-    if (i == 1200): #1822 frames
+    if (i == 1300): #1822 frames
         break
     #print (i)
     i +=1
